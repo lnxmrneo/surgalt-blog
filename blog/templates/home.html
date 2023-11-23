@@ -1,4 +1,5 @@
 {% extends './base.html' %}
+{% load templatetags %}
 
 {% block content %}
 <div class="container">
@@ -40,20 +41,7 @@
         <div class="col-lg-4">
             
             <!-- Categories widget-->
-            <div class="card mb-4">
-                <div class="card-header">Төрлүүд</div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <ul class="list-unstyled mb-0">
-                                {% for category in categories %}
-                                    <li><a href="#!">{{ category.name }}</a></li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% get_category %}
             <!-- Side widget-->
             <div class="card mb-4">
                 <div class="card-header">Side Widget</div>
