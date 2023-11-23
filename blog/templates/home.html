@@ -7,12 +7,12 @@
         <div class="col-lg-8">
             <!-- Featured blog post-->
             <div class="card mb-4">
-                <a href="#!"><img class="card-img-top" src="{{ last.image.url }}" alt="..." /></a>
+                <a href="{% url 'more' last.id %}"><img class="card-img-top" src="{{ last.image.url }}" alt="..." /></a>
                 <div class="card-body">
                     <div class="small text-muted">{{last.created}}</div>
                     <h2 class="card-title">{{ lats.title }}</h2>
                     <p class="card-text">{{ last.shortBody }}</p>
-                    <a class="btn btn-primary" href="#!">Дэлгэрэнгүй →</a>
+                    <a class="btn btn-primary" href="{% url 'more' last.id %}">Дэлгэрэнгүй →</a>
                 </div>
             </div>
             <!-- Nested row for non-featured blog posts-->
@@ -21,12 +21,13 @@
                 <div class="col-lg-6">
                     <!-- Blog post-->
                     <div class="card mb-4">
-                        <a href="#!"><img class="card-img-top" src="{{news.image.url}}" alt="..." /></a>
+                        <a href="{% url 'more' news.id %}"><img class="card-img-top" src="{{news.image.url}}" alt="..." /></a>
                         <div class="card-body">
+    
                             <div class="small text-muted">{{news.created | timesince}} ago</div>
                             <h2 class="card-title h4">{{news.title}}</h2>
                             <p class="card-text">{{news.shortBody}}</p>
-                            <a class="btn btn-primary" href="#!">Дэлгэрэнгүй →</a>
+                            <a class="btn btn-primary" href="{% url 'more' news.id %}">Дэлгэрэнгүй →</a>
                         </div>
                     </div>
                 </div>

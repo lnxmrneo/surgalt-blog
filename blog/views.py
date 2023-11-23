@@ -9,3 +9,7 @@ def home(request):
     newss = News.objects.order_by('-created')
 
     return render(request, "home.html", {'categories':categories, 'last': last, 'newss': newss})
+
+
+def more(request, id):
+    return render(request, "more.html")
