@@ -12,4 +12,5 @@ def home(request):
 
 
 def more(request, id):
-    return render(request, "more.html")
+    news = News.objects.get(id=id)
+    return render(request, "more.html", {"news":news})
